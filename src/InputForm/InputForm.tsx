@@ -45,16 +45,16 @@ const colors = {
 }
 
 export const InputForm = () => {
-  const [FirstName, firstNameState] = useText({
+  const {FirstName, firstNameState} = useText({
     validate: nameValidator,
     name: "firstName"
   })
 
-  const [DescribeYourself, describeYourselfState] = useTextArea({
+  const {DescribeYourself, describeYourselfState} = useTextArea({
     name: "describeYourself"
   })
   
-  const [FavoriteColor, favoriteColorState] = useSelect({
+  const {FavoriteColor, favoriteColorState} = useSelect({
     init: "blue",
     name: "favoriteColor",
   })

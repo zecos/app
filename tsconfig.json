@@ -19,7 +19,7 @@
     "jsx": "react",
     "declaration": true,
     "isolatedModules": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
   },
   "include": [
     "src"

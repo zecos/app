@@ -1,0 +1,379 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20191207.233205.18403.0.001.json",
+    "dumpEventTime": "2019-12-07T23:32:05Z",
+    "dumpEventTimeStamp": "1575779525605",
+    "processId": 18403,
+    "cwd": "/home/zwhitchcox/dev/zecos/app",
+    "commandLine": [
+      "/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node",
+      "/home/zwhitchcox/dev/zecos/app/node_modules/react-scripts/scripts/start.js"
+    ],
+    "nodejsVersion": "v12.4.0",
+    "glibcVersionRuntime": "2.30",
+    "glibcVersionCompiler": "2.17",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "12.4.0",
+      "v8": "7.4.288.27-node.18",
+      "uv": "1.29.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.38.0",
+      "napi": "4",
+      "llhttp": "1.1.3",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1b",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v12.4.0/node-v12.4.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.4.0/node-v12.4.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "5.3.8-3-MANJARO",
+    "osVersion": "#1 SMP PREEMPT Sun Nov 3 14:19:23 UTC 2019",
+    "osMachine": "x86_64",
+    "host": "zetup-manjaro-gnome"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000aadaf5",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    },
+    {
+      "pc": "0x000000000098fec3",
+      "symbol": "node::OnFatalError(char const*, char const*) [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b1552e",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b158a9",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f20105",
+      "symbol": " [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f2aa6b",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f2b787",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f2e225",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000ef9250",
+      "symbol": "v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationSpace) [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    },
+    {
+      "pc": "0x00000000011cb0ce",
+      "symbol": "v8::internal::Runtime_AllocateInNewSpace(int, unsigned long*, v8::internal::Isolate*) [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000001a93942",
+      "symbol": " [/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node]"
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2168836096,
+    "totalCommittedMemory": 2157998680,
+    "usedMemory": 1885928840,
+    "availableMemory": 64816112,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 32024,
+        "capacity": 523976,
+        "used": 31712,
+        "available": 492264
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 26217976,
+        "capacity": 16767232,
+        "used": 3849872,
+        "available": 12917360
+      },
+      "old_space": {
+        "memorySize": 2025971712,
+        "committedMemory": 2023266176,
+        "capacity": 1780671144,
+        "used": 1775011088,
+        "available": 5660056
+      },
+      "code_space": {
+        "memorySize": 1736704,
+        "committedMemory": 1602336,
+        "capacity": 1447968,
+        "used": 1447968,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 4198400,
+        "committedMemory": 4029608,
+        "capacity": 2877920,
+        "used": 2877920,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 102227968,
+        "committedMemory": 102227968,
+        "capacity": 102159720,
+        "used": 102159720,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 550560,
+        "used": 550560,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16767232,
+        "used": 0,
+        "available": 16767232
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 181.054,
+    "kernelCpuSeconds": 37.8404,
+    "cpuConsumptionPercent": 164.582,
+    "maxRss": 2525184000,
+    "pageFaults": {
+      "IORequired": 17,
+      "IONotRequired": 1420269
+    },
+    "fsActivity": {
+      "reads": 2112,
+      "writes": 0
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 83.7494,
+    "kernelCpuSeconds": 17.498,
+    "cpuConsumptionPercent": 76.1259,
+    "fsActivity": {
+      "reads": 1872,
+      "writes": 0
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "SHELL": "/bin/bash",
+    "ZETUP_PRIVATE_KEY_FILE": "/home/zwhitchcox/.ssh/zetup_id_rsa",
+    "SESSION_MANAGER": "local/zetup-manjaro-gnome:@/tmp/.ICE-unix/2754,unix/zetup-manjaro-gnome:/tmp/.ICE-unix/2754",
+    "COLORTERM": "truecolor",
+    "npm_package_dependencies__types_react": "16.9.11",
+    "XDG_MENU_PREFIX": "gnome-",
+    "TERM_PROGRAM_VERSION": "1.40.1",
+    "ZETUP_PKG_DIR": "/home/zwhitchcox/.zetup/pkg",
+    "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
+    "HISTSIZE": "50000",
+    "npm_package_browserslist_development_0": "last 1 chrome version",
+    "npm_package_browserslist_development_1": "last 1 firefox version",
+    "npm_package_browserslist_development_2": "last 1 safari version",
+    "npm_package_dependencies_react_scripts": "3.2.0",
+    "NODE": "/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node",
+    "npm_config_ignore_scripts": "",
+    "LC_ADDRESS": "en_US.UTF-8",
+    "npm_package_dependencies__zecos_validators": "^0.0.0",
+    "LC_NAME": "en_US.UTF-8",
+    "SSH_AUTH_SOCK": "/tmp/ssh-vyEA8jFtpUQt/agent.6699",
+    "npm_package_dependencies__zecos_inputz_basic": "^0.0.1",
+    "npm_package_private": "true",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"start\"],\"original\":[\"start\"]}",
+    "npm_config_bin_links": "true",
+    "DESKTOP_SESSION": "gnome",
+    "LC_MONETARY": "en_US.UTF-8",
+    "SSH_AGENT_PID": "6700",
+    "GDK_PIXBUF_MODULE_FILE": "/home/zwhitchcox/snap/code/common/.cache/gdk-pixbuf-loaders.cache",
+    "BAMF_DESKTOP_FILE_HINT": "/var/lib/snapd/desktop/applications/code_code.desktop",
+    "NO_AT_BRIDGE": "1",
+    "EDITOR": "vim",
+    "ZETUP_DIR": "/home/zwhitchcox/.zetup",
+    "PWD": "/home/zwhitchcox/dev/zecos/app",
+    "npm_config_save_prefix": "^",
+    "GSETTINGS_SCHEMA_DIR": "/snap/code/20/usr/share/glib-2.0/schemas",
+    "LOGNAME": "zwhitchcox",
+    "XDG_SESSION_DESKTOP": "gnome",
+    "QT_QPA_PLATFORMTHEME": "qt5ct",
+    "XDG_SESSION_TYPE": "x11",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_dependencies_react": "^16.12.0",
+    "npm_package_scripts_build": "react-scripts build",
+    "_": "/home/zwhitchcox/dev/zecos/app/node_modules/.bin/react-scripts",
+    "XAUTHORITY": "/run/user/1000/gdm/Xauthority",
+    "GJS_DEBUG_TOPICS": "JS ERROR;JS LOG",
+    "WINDOWPATH": "2",
+    "GDM_LANG": "en_US.UTF-8",
+    "HOME": "/home/zwhitchcox",
+    "USERNAME": "zwhitchcox",
+    "npm_config_version_git_tag": "true",
+    "npm_package_dependencies__types_react_dom": "16.9.4",
+    "LC_PAPER": "en_US.UTF-8",
+    "LANG": "en_US.UTF-8",
+    "XDG_CURRENT_DESKTOP": "GNOME",
+    "npm_config_init_license": "MIT",
+    "npm_package_version": "0.1.0",
+    "npm_package_dependencies__material_ui_core": "^4.7.1",
+    "npm_config_version_commit_hooks": "true",
+    "DISABLE_WAYLAND": "1",
+    "INVOCATION_ID": "22349bc8ba58473690af2a79aadc5be7",
+    "npm_package_peerDependencies_react": "^16.12.0",
+    "MANAGERPID": "2502",
+    "INIT_CWD": "/home/zwhitchcox/dev/zecos/app",
+    "CHROME_DESKTOP": "code-url-handler.desktop",
+    "XDG_CACHE_HOME": "/home/zwhitchcox/snap/code/common/.cache",
+    "npm_lifecycle_script": "react-scripts start",
+    "GJS_DEBUG_OUTPUT": "stderr",
+    "ZETUP_CUR_PKG": "/home/zwhitchcox/.zetup/pkg/github.com/zetup-sh/zetup-pkg",
+    "NVM_DIR": "/home/zwhitchcox/.nvm",
+    "npm_config_version_tag_prefix": "v",
+    "YARN_WRAP_OUTPUT": "false",
+    "XDG_SESSION_CLASS": "user",
+    "LC_IDENTIFICATION": "en_US.UTF-8",
+    "TERM": "xterm-256color",
+    "npm_package_name": "app",
+    "npm_package_dependencies__types_node": "12.12.7",
+    "npm_package_scripts_eject": "react-scripts eject",
+    "USER": "zwhitchcox",
+    "npm_package_dependencies_react_dom": "^16.12.0",
+    "DISPLAY": ":0",
+    "npm_lifecycle_event": "start",
+    "SHLVL": "2",
+    "npm_config_version_git_sign": "",
+    "npm_package_dependencies_react_router_dom": "^5.1.2",
+    "GDK_PIXBUF_MODULEDIR": "/snap/code/20/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders",
+    "NVM_CD_FLAGS": "",
+    "npm_config_version_git_message": "v%s",
+    "LC_TELEPHONE": "en_US.UTF-8",
+    "LC_MEASUREMENT": "en_US.UTF-8",
+    "ZETUP_PUBLIC_KEY_FILE": "/home/zwhitchcox/.ssh/zetup_id_rsa.pub",
+    "npm_config_user_agent": "yarn/1.19.1 npm/? node/v12.4.0 linux x64",
+    "npm_execpath": "/usr/lib/node_modules/yarn/bin/yarn.js",
+    "MOZ_PLUGIN_PATH": "/usr/lib/mozilla/plugins",
+    "npm_package_scripts_test": "react-scripts test",
+    "XDG_RUNTIME_DIR": "/run/user/1000/snap.code",
+    "npm_package_dependencies_fieldz": "^0.1.1",
+    "npm_config_strict_ssl": "true",
+    "LC_TIME": "en_US.UTF-8",
+    "npm_package_devDependencies_tezt": "^1.1.0",
+    "npm_package_dependencies_typescript": "3.7.2",
+    "npm_package_dependencies__types_jest": "24.0.23",
+    "JOURNAL_STREAM": "9:24534",
+    "XDG_DATA_DIRS": "/home/zwhitchcox/.local/share/flatpak/exports/share/:/var/lib/flatpak/exports/share/:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop",
+    "npm_package_browserslist_production_2": "not op_mini all",
+    "npm_package_scripts_start": "react-scripts start",
+    "npm_package_browserslist_production_0": ">0.2%",
+    "npm_package_browserslist_production_1": "not dead",
+    "PATH": "/tmp/yarn--1575779392274-0.4725232969812063:/home/zwhitchcox/dev/zecos/app/node_modules/.bin:/home/zwhitchcox/.config/yarn/link/node_modules/.bin:/home/zwhitchcox/.nvm/versions/node/v12.4.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/zwhitchcox/.nvm/versions/node/v12.4.0/lib/node_modules/npm/bin/node-gyp-bin:/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node_modules/npm/bin/node-gyp-bin:/home/zwhitchcox/.cargo/bin:/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin:/home/zwhitchcox/.local/bin:/home/zwhitchcox/.cargo/bin:/home/zwhitchcox/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/zwhitchcox/go/bin:/home/zwhitchcox/.cargo/bin:/home/zwhitchcox/go/bin:/usr/local/go/bin:/home/zwhitchcox/.yarn/bin:/home/zwhitchcox/.npm/bin:/home/zwhitchcox/.local/bin:/home/zwhitchcox/.zetup/pkg/github.com/zetup-sh/zetup-pkg/bin:/home/zwhitchcox/.zetup/pkg/github.com/zetup-sh/zetup-pkg/bin/tmux:/home/zwhitchcox/.zetup/pkg/github.com/zetup-sh/zetup-pkg/bin/git:/usr/sbin:/home/zwhitchcox/go/bin:/home/zwhitchcox/.cargo/bin:/home/zwhitchcox/go/bin:/usr/local/go/bin:/home/zwhitchcox/.yarn/bin:/home/zwhitchcox/.npm/bin:/home/zwhitchcox/.local/bin:/home/zwhitchcox/.zetup/pkg/github.com/zetup-sh/zetup-pkg/bin:/home/zwhitchcox/.zetup/pkg/github.com/zetup-sh/zetup-pkg/bin/tmux:/home/zwhitchcox/.zetup/pkg/github.com/zetup-sh/zetup-pkg/bin/git:/usr/sbin",
+    "ZETUP_INSTALLATION_ID": "zetup-zetup-manjaro-gnome-zwhitchcox-remotely-stirring-gorilla",
+    "GDMSESSION": "gnome",
+    "HISTFILESIZE": "100000",
+    "npm_package_devDependencies__testing_library_react": "^9.3.2",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+    "MAIL": "/var/spool/mail/zwhitchcox",
+    "NVM_BIN": "/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin",
+    "npm_config_registry": "https://registry.yarnpkg.com",
+    "npm_config_ignore_optional": "",
+    "GIO_LAUNCHED_DESKTOP_FILE_PID": "4375",
+    "npm_node_execpath": "/home/zwhitchcox/.nvm/versions/node/v12.4.0/bin/node",
+    "npm_package_devDependencies__testing_library_user_event": "^7.1.2",
+    "GIO_LAUNCHED_DESKTOP_FILE": "/var/lib/snapd/desktop/applications/code_code.desktop",
+    "LC_NUMERIC": "en_US.UTF-8",
+    "OLDPWD": "/home/zwhitchcox",
+    "GOPATH": "/home/zwhitchcox/go",
+    "TERM_PROGRAM": "vscode",
+    "npm_config_init_version": "1.0.0",
+    "npm_package_eslintConfig_extends": "react-app",
+    "BABEL_ENV": "development",
+    "NODE_ENV": "development",
+    "BROWSER": "false",
+    "NODE_PATH": ""
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 65536,
+      "hard": 65536
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 524288,
+      "hard": 524288
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 41820,
+      "hard": 41820
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/usr/lib/libdl.so.2",
+    "/usr/lib/librt.so.1",
+    "/usr/lib/libstdc++.so.6",
+    "/usr/lib/libm.so.6",
+    "/usr/lib/libgcc_s.so.1",
+    "/usr/lib/libpthread.so.0",
+    "/usr/lib/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2",
+    "/usr/lib/libnss_files.so.2"
+  ]
+}

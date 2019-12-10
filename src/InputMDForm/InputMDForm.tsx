@@ -1,6 +1,6 @@
 import React from "react"
 import { nameValidator, createOneOfValidator } from "@zecos/validators"
-import { useText, useSelect, useRadio, useCheckbox, useGroup, useSwitch } from "@zecos/inputs-mui"
+import { useText, useSelect, useRadio, useCheckbox, useGroup, useSwitch, useTimePicker, useDatePicker, useSlider } from "@zecos/inputs-mui"
 import "./InputMDForm.css"
  
 
@@ -8,8 +8,8 @@ const colors = {
   Blue: "blue",
   Red: "red",
 }
-const lessThan2 = inputs => {
-  const count = inputs.reduce((acc, cur) => {
+const lessThan2 = (inputs: any) => {
+  const count = inputs.reduce((acc:any, cur:any) => {
     const {state} = cur
     if (state.value) {
       return ++acc
@@ -22,8 +22,8 @@ const lessThan2 = inputs => {
   return []
 }
 
-export const renderGroupState = inputs => inputs
-  .map(input => {
+export const renderGroupState = (inputs: any) => inputs
+  .map((input:any) => {
     const {state, helpers} = input
     const key = helpers.title
     return <div key={key}>{key}: {"" + state.value}</div>
@@ -45,9 +45,12 @@ export const InputMDForm = () => {
     name: "favoriteColor",
   })
   
-  const {Cmpt:FavoriteFlavor, state:favoriteFlavorState} = useRadio({
+  const {FavoriteFlavor, favoriteFlavorState} = useRadio({
     init: "rockyroad",
-    name: "favoriteFlavorOfIceCream",
+    name: "favoriteFlavor",
+    props: {
+      label: "Favorite Flavor of Ice Cream",
+    },
     validate: createOneOfValidator({options: ["chocolate", "vanilla"]}),
   })
 
@@ -94,6 +97,31 @@ export const InputMDForm = () => {
     name: "musicILikeSwitch",
     validate: lessThan2,
   })
+  const {AppointmentDate, appointmentDateState} = useDatePicker({
+    init: new Date,
+    name: 'appointmentDate'
+  })
+  
+  const {AppointmentTime, appointmentTimeState} = useTimePicker({
+    init: new Date,
+    name: 'appointmentTime'
+  })
+  
+  const {Temperature, temperatureState} = useSlider({
+    init: 30,
+    name: 'temperature',
+    props: {
+      min: 0,
+      max: 100,
+      step: 10,
+      orientation: "vertical",
+      marks: [...new Array(11)]
+        .map((_, num) => ({
+          label: `${num * 10}°C`,
+          value: num * 10
+        })),
+    }
+  })
 
   return (
     <>
@@ -109,8 +137,11 @@ export const InputMDForm = () => {
         }}
       /><br />
       <Cool /><br />
-      <MusicILike /><br />
+      <MusicILike row /><br />
       <MusicILikeSwitch /><br />
+      <AppointmentDate /><br />
+      <AppointmentTime /><br />
+      <Temperature /><br />
       <div>
         First Name State: {firstNameState.value}<br />
         Last Name State: {firstNameState.value}<br />
@@ -119,6 +150,9 @@ export const InputMDForm = () => {
         Cool: {String(coolState.value)}<br />
         Music I Like {renderGroupState(musicILikeInputs)}
         Music I Like Radio {renderGroupState(musicILikeSwitchInputs)}
+        Appointment Time: {appointmentTimeState.value.toString()}<br />
+        Appointment Date: {appointmentDateState.value.toString()}<br />
+        Temperature: {temperatureState.value}<br />
       </div>
     </form>
     <br />
