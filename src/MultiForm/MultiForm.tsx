@@ -34,10 +34,10 @@ export const MultiForm = () => {
     actions.push(newSimple)
   }
   
-  return <div>
+  return <form className="form">
       <FirstNames />
       <button onClick={addFirst}>Add First</button>
       <br />
       <br />
-    </div>
+    </form>
 }

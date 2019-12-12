@@ -11,15 +11,10 @@ import { MultiForm } from "./MultiForm/MultiForm";
 import { nameValidator } from "@zecos/validators";
 
 const App = () => {
-  const [state, setState] = useState("")
-  const errors = nameValidator(state)
-  const onChange = (e:any) => setState(e.target.value)
   return (
   <div className={styles.App}>
-    {errors.map((err,i) => <div key={i}>{err.toString()}</div>)}
-    <input onChange={onChange} value={state} />
-    {/* <h3>Basic Form</h3>
-    <InputForm /> */}
+    <h3>Basic Form</h3>
+    <InputForm />
     <ThemeProvider theme={theme}>
       <h3>MD Form</h3>
       <InputMDForm />

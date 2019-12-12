@@ -1,11 +1,10 @@
 import React from "react"
 import { nameValidator, createOneOfValidator } from "@zecos/validators"
 import { TextInput, SelectInput, RadioInput, CheckboxInput, GroupLayout, SwitchInput, TimePickerInput, DatePickerInput, SliderInput, SimpleFormLayout, Multi } from "@zecos/inputs-mui"
-import {displayFormData} from "@zecos/inputs"
         
 export const SimpleForm = () => {
-  const simpleForm = SimpleFormLayout({
-    name: 'form',
+  const {SimpleForm, SimpleFormDisplay, logSimpleForm}  = SimpleFormLayout({
+    name: 'simpleForm',
     items: [
       TextInput({
         validate: nameValidator,
@@ -26,16 +25,22 @@ export const SimpleForm = () => {
             name: "lastName"
           }),
         ],
-        name: "People"
+        name: "people"
       })
-    ]
+    ],
+    props: {
+      className: "form"
+    }
   })
-  const {Form} = simpleForm
+  
 
   return (
     <>
-    <Form />
-    {displayFormData(simpleForm, {full: true})}
+    <SimpleForm />
+    <SimpleFormDisplay className="form" />
+    <div className="form">
+    <button onClick={() => logSimpleForm({full: true})}>Log</button>
+    </div>
     </>
   )
 }

@@ -1,6 +1,6 @@
- import React, { useState } from "react"
+import React from "react"
 import { usernameValidator, nameValidator, emailValidator } from "@zecos/validators"
-import { useTextArea, useSelect, useText } from "@zecos/inputs-basic"
+import { TextArea, Select, Text } from "@zecos/inputs-basic"
 import './InputForm.css'
  
 const fieldProperties = {
@@ -44,17 +44,18 @@ const colors = {
   ["Alice Blue"]: "aliceblue"
 }
 
+
 export const InputForm = () => {
-  const {FirstName, firstNameState} = useText({
+  const {FirstName, firstNameState} = Text({
     validate: nameValidator,
     name: "firstName"
   })
 
-  const {DescribeYourself, describeYourselfState} = useTextArea({
+  const {DescribeYourself, describeYourselfState} = TextArea({
     name: "describeYourself"
   })
   
-  const {FavoriteColor, favoriteColorState} = useSelect({
+  const {FavoriteColor, favoriteColorState} = Select({
     init: "blue",
     name: "favoriteColor",
   })
@@ -72,4 +73,5 @@ export const InputForm = () => {
     </form>
   )
 }
+
  
