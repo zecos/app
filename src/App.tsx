@@ -8,7 +8,6 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { SimpleForm } from "./SimpleForm/SimpleForm";
 import { MultiForm } from "./MultiForm/MultiForm";
-import { nameValidator } from "@zecos/validators";
 
 const App = () => {
   return (

@@ -1,24 +1,24 @@
 import React from "react"
-import { usernameValidator, nameValidator, emailValidator } from "@zecos/validators"
-import { TextArea, Select, Text } from "@zecos/inputs-basic"
+import { validateUsername, validateName, validateEmail } from "@zecos/validate"
+import { TextArea, Select, Text } from "@zecos/input-basic"
 import './InputForm.css'
  
 const fieldProperties = {
   firstNameOfTheApplicantForThisForm: {
     init: "",
-    validate: nameValidator,
+    validate: validateName,
   },
   lastName: {
     init: "",
-    validate: nameValidator,
+    validate: validateName,
   },
   email: {
     init: "",
-    validate: emailValidator,
+    validate: validateEmail,
   },
   username: {
     init: "",
-    usernameValidator,
+    validateUsername,
   },
   describeYourself: {
     init: "",
@@ -46,8 +46,8 @@ const colors = {
 
 
 export const InputForm = () => {
-  const {FirstName, firstNameState} = Text({
-    validate: nameValidator,
+  const {firstName, FirstName, firstNameState, FirstNameDisplay} = Text({
+    validate: validateName,
     name: "firstName"
   })
 
@@ -70,6 +70,7 @@ export const InputForm = () => {
       First Name State: {firstNameState.value}<br />
       Describe Yourself: {describeYourselfState.value}<br />
       Favorite Color: {favoriteColorState.value}
+      <FirstNameDisplay />
     </form>
   )
 }

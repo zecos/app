@@ -1,17 +1,17 @@
 // export const MultiForm = () => {}
 import React from 'react'
-import { Multi, TextInput, SimpleFormLayout } from '@zecos/inputs-mui'
-import { nameValidator } from '@zecos/validators'
+import { Multi, TextInput, SimpleFormLayout } from '@zecos/input-mui'
+import { validateName } from '@zecos/validate'
 
 const newSimple = () => SimpleFormLayout({
   name: 'form',
   items: [
     TextInput({
-      validate: nameValidator,
+      validate: validateName,
       name: "firstName"
     }),
     TextInput({
-      validate: nameValidator,
+      validate: validateName,
       name: "lastName"
     }),
   ]
@@ -20,7 +20,7 @@ const newSimple = () => SimpleFormLayout({
 export const MultiForm = () => {
   const newText = () => (
     TextInput({
-      validate: nameValidator,
+      validate: validateName,
       name: "firstName"
     })
   )

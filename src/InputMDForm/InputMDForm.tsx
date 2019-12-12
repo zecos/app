@@ -1,8 +1,10 @@
 import React from "react"
-import { nameValidator, createOneOfValidator } from "@zecos/validators"
-import { TextInput, SelectInput, RadioInput, CheckboxInput, GroupLayout, SwitchInput, TimePickerInput, DatePickerInput, SliderInput } from "@zecos/inputs-mui"
+import { validateName, createOneOfValidator } from "@zecos/validate"
+import { TextInput, SelectInput, RadioInput, CheckboxInput, GroupLayout, SwitchInput,  SliderInput } from "@zecos/input-mui"
+import { TimePickerInput, DatePickerInput } from "@zecos/input-picker"
 import "./InputMDForm.css"
  
+(window as any).realReact = React
 
 const colors = {
   Blue: "blue",
@@ -31,12 +33,12 @@ export const renderGroupState = (inputs: any) => inputs
         
 export const InputMDForm = () => {
   const {FirstName, firstNameState} = TextInput({
-    validate: nameValidator,
+    validate: validateName,
     name: "firstName"
   })
 
   const {LastName, lastNameState} = TextInput({
-    validate: nameValidator,
+    validate: validateName,
     name: "lastName"
   })
   
