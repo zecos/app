@@ -1,6 +1,6 @@
 import React from "react"
 import { nameValidator, createOneOfValidator } from "@zecos/validators"
-import { useText, useSelect, useRadio, useCheckbox, useGroup, useSwitch, useTimePicker, useDatePicker, useSlider } from "@zecos/inputs-mui"
+import { TextInput, SelectInput, RadioInput, CheckboxInput, GroupLayout, SwitchInput, TimePickerInput, DatePickerInput, SliderInput } from "@zecos/inputs-mui"
 import "./InputMDForm.css"
  
 
@@ -30,22 +30,22 @@ export const renderGroupState = (inputs: any) => inputs
   })
         
 export const InputMDForm = () => {
-  const {FirstName, firstNameState} = useText({
+  const {FirstName, firstNameState} = TextInput({
     validate: nameValidator,
     name: "firstName"
   })
 
-  const {LastName, lastNameState} = useText({
+  const {LastName, lastNameState} = TextInput({
     validate: nameValidator,
     name: "lastName"
   })
   
-  const {FavoriteColor, favoriteColorState} = useSelect({
+  const {FavoriteColor, favoriteColorState} = SelectInput({
     init: "blue",
     name: "favoriteColor",
   })
   
-  const {FavoriteFlavor, favoriteFlavorState} = useRadio({
+  const {FavoriteFlavor, favoriteFlavorState} = RadioInput({
     init: "rockyroad",
     name: "favoriteFlavor",
     props: {
@@ -55,22 +55,22 @@ export const InputMDForm = () => {
   })
 
 
-  const {Cmpt:Cool, state:coolState} = useCheckbox({
+  const {Cmpt:Cool, state:coolState} = CheckboxInput({
     init: false,
     name: "IAmCool",
   })
   
-  const {MusicILike, musicILikeInputs} = useGroup({
-    inputs: [
-      useCheckbox({
+  const {MusicILike, musicILikeItems} = GroupLayout({
+    items: [
+      CheckboxInput({
         init: false,
         name: "systemOfADown",
       }),
-      useCheckbox({
+      CheckboxInput({
         init: false,
         name: "blink182",
       }),
-      useCheckbox({
+      CheckboxInput({
         init: false,
         name: "sum41"
       }),
@@ -79,17 +79,17 @@ export const InputMDForm = () => {
     validate: lessThan2,
   })
 
-  const {MusicILikeSwitch, musicILikeSwitchInputs} = useGroup({
-    inputs: [
-      useSwitch({
+  const {MusicILikeSwitch, musicILikeSwitchItems} = GroupLayout({
+    items: [
+      SwitchInput({
         init: false,
         name: "systemOfADown",
       }),
-      useSwitch({
+      SwitchInput({
         init: false,
         name: "blink182",
       }),
-      useSwitch({
+      SwitchInput({
         init: false,
         name: "sum41"
       }),
@@ -97,17 +97,17 @@ export const InputMDForm = () => {
     name: "musicILikeSwitch",
     validate: lessThan2,
   })
-  const {AppointmentDate, appointmentDateState} = useDatePicker({
+  const {AppointmentDate, appointmentDateState} = DatePickerInput({
     init: new Date,
     name: 'appointmentDate'
   })
   
-  const {AppointmentTime, appointmentTimeState} = useTimePicker({
+  const {AppointmentTime, appointmentTimeState} = TimePickerInput({
     init: new Date,
     name: 'appointmentTime'
   })
   
-  const {Temperature, temperatureState} = useSlider({
+  const {Temperature, temperatureState} = SliderInput({
     init: 30,
     name: 'temperature',
     props: {
@@ -148,8 +148,8 @@ export const InputMDForm = () => {
         Favorite Color: {favoriteColorState.value}<br />
         Favorite Flavor: {favoriteFlavorState.value}<br />
         Cool: {String(coolState.value)}<br />
-        Music I Like {renderGroupState(musicILikeInputs)}
-        Music I Like Radio {renderGroupState(musicILikeSwitchInputs)}
+        Music I Like {renderGroupState(musicILikeItems)}
+        Music I Like Radio {renderGroupState(musicILikeSwitchItems)}
         Appointment Time: {appointmentTimeState.value.toString()}<br />
         Appointment Date: {appointmentDateState.value.toString()}<br />
         Temperature: {temperatureState.value}<br />

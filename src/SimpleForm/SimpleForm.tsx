@@ -1,24 +1,42 @@
 import React from "react"
 import { nameValidator, createOneOfValidator } from "@zecos/validators"
-import { useText, useSelect, useRadio, useCheckbox, useGroup, useSwitch, useTimePicker, useDatePicker, useSlider, useSimpleForm } from "@zecos/inputs-mui"
+import { TextInput, SelectInput, RadioInput, CheckboxInput, GroupLayout, SwitchInput, TimePickerInput, DatePickerInput, SliderInput, SimpleFormLayout, Multi } from "@zecos/inputs-mui"
+import {displayFormData} from "@zecos/inputs"
         
 export const SimpleForm = () => {
-  const { Form } = useSimpleForm({
+  const simpleForm = SimpleFormLayout({
     name: 'form',
-    inputs: [
-      useText({
+    items: [
+      TextInput({
         validate: nameValidator,
         name: "firstName"
       }),
-      useText({
+      TextInput({
         validate: nameValidator,
         name: "lastName"
       }),
+      Multi({
+        init: [
+          TextInput({
+            validate: nameValidator,
+            name: "firstName"
+          }),
+          TextInput({
+            validate: nameValidator,
+            name: "lastName"
+          }),
+        ],
+        name: "People"
+      })
     ]
   })
+  const {Form} = simpleForm
 
   return (
+    <>
     <Form />
+    {displayFormData(simpleForm, {full: true})}
+    </>
   )
 }
  
